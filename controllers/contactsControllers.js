@@ -36,9 +36,8 @@ const updateContact = async (req, res) => {
   const { id } = req.params;
   const result = await contactsService.updateById(id, req.body);
   if (!result) {
-    throw HttpError(404);
+    throw HttpError(400);
   }
-  ``;
   res.json(result);
 };
 
